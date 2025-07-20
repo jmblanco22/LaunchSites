@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/LaunchSites/static/css/main.b46ab024.css",
+    "main.js": "/LaunchSites/static/js/main.58a72abf.js",
+    "index.html": "/LaunchSites/index.html",
+    "main.b46ab024.css.map": "/LaunchSites/static/css/main.b46ab024.css.map",
+    "main.58a72abf.js.map": "/LaunchSites/static/js/main.58a72abf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b46ab024.css",
+    "static/js/main.58a72abf.js"
+  ]
+}
