@@ -14,12 +14,12 @@ const HeroSection = ({ navigateTo }) => (
       </p>
       <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
         {/* "Get Started" now navigates to the 'get-started' page */}
-        <a href="#" onClick={() => navigateTo('get-started')} className="bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-300">
+        <button onClick={() => navigateTo('get-started')} className="bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-300">
           Get Started
-        </a>
-        <a href="#" onClick={() => navigateTo('contact')} className="bg-white text-blue-600 font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300">
+        </button>
+        <button onClick={() => navigateTo('contact')} className="bg-white text-blue-600 font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300">
           Book a Demo
-        </a>
+        </button>
       </div>
     </div>
   </Section>
