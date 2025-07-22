@@ -1,7 +1,6 @@
 {
   "name": "no",
   "version": "0.1.0",
-  "homepage": "https://jmblanco22.github.io/LaunchSites",
   "private": true,
   "dependencies": {
     "lucide-react": "^0.525.0",
