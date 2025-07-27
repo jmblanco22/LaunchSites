@@ -1,20 +1,17 @@
 import React from 'react';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
-const Footer = () => (
-    <footer className="bg-gray-800 text-white">
-        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            <div className="md:flex md:items-center md:justify-between">
-                <div className="flex justify-center md:order-2 space-x-6">
-                    {/* Social links can be added here */}
-                </div>
-                <div className="mt-8 md:mt-0 md:order-1">
-                    <p className="text-center text-base text-gray-400">
-                        &copy; {new Date().getFullYear()} LaunchSites. All rights reserved.
-                    </p>
-                </div>
-            </div>
-        </div>
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <div className="footer-socials">
+        <a href="#" aria-label="Github"><FaGithub /></a>
+        <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
+        <a href="#" aria-label="Twitter"><FaTwitter /></a>
+      </div>
+      <p>&copy; {new Date().getFullYear()} Launchsites. All rights reserved. Your mission, our code.</p>
     </footer>
-);
+  );
+};
 
 export default Footer;

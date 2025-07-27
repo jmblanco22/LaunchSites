@@ -1,17 +1,13 @@
+// This component's functionality has been merged into the Contact.jsx section
+// for a seamless one-page experience. You can use this file to build out
+// a more complex contact/get-started flow in the future.
 import React from 'react';
-
-// We import the sections that make up this page
-import WhyChooseUs from '../sections/WhyChooseUs';
-import Pricing from '../sections/Pricing';
 
 const GetStartedPage = () => {
   return (
-    <>
-      {/* The "Why Us" section appears first */}
-      <WhyChooseUs />
-      {/* The "Pricing" section appears second */}
-      <Pricing />
-    </>
+    <div>
+      {/* Content for a dedicated 'Get Started' page could go here */}
+    </div>
   );
 };
 

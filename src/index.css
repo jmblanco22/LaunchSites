@@ -1,262 +1,315 @@
-/*
- * Modern Web App Stylesheet (Final)
- *
- * This file provides a clean, modern, white-and-blue theme for your React application.
- * It is designed to work with the existing className attributes in your components.
- *
- * Update: Added a rule to prevent the logo link from changing color after being visited.
- */
-
-/* 1. Google Font & Global Styles
-----------------------------------------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;700;900&display=swap');
 
 :root {
-  --blue-600: #2563eb;
-  --blue-700: #1d4ed8;
-  --blue-100: #dbeafe;
-  --blue-50: #eff6ff;
-  --gray-900: #111827;
-  --gray-800: #1f2937;
-  --gray-600: #4b5563;
-  --gray-400: #9ca3af;
-  --gray-200: #e5e7eb;
-  --white: #ffffff;
-  --green-500: #22c55e;
+  --primary-color: #0aefff; /* Neon Blue */
+  --secondary-color: #00ff7f; /* Spring Green */
+  --background-dark: #0d0c1d; /* Deep Space Blue */
+  --background-light: #16152d;
+  --text-color: #dbe2fb;
+  --text-muted: #8c8d9e;
+  --font-family: 'Exo 2', sans-serif;
+  --max-width: 1100px;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+/* Add a cool background image with a parallax effect */
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: var(--white);
-  color: var(--gray-800);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-family);
+  background-color: var(--background-dark);
+  color: var(--text-color);
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  background-attachment: fixed; /* This creates the parallax effect */
+  overflow-x: hidden;
 }
 
-/* 2. Layout & Reusable Components
-----------------------------------------------------------------*/
-/* Section Layout */
-.py-16 { padding-top: 4rem; padding-bottom: 4rem; }
-.py-24 { padding-top: 6rem; padding-bottom: 6rem; }
-.px-4 { padding-left: 1rem; padding-right: 1rem; }
-.max-w-7xl { max-width: 80rem; }
-.mx-auto { margin-left: auto; margin-right: auto; }
+/* General Styles */
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
 
-/* Section Title */
-.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
-.font-bold { font-weight: 700; }
-.text-center { text-align: center; }
-.text-gray-800 { color: var(--gray-800); }
-.mb-12 { margin-bottom: 3rem; }
+h1 { font-size: 4rem; font-weight: 900; color: #fff; }
+p { color: var(--text-muted); line-height: 1.8; font-size: 1.1rem; }
 
-/* Card Component */
-.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
-.rounded-xl { border-radius: 0.75rem; }
-/*.overflow-hidden { overflow: hidden; }*/
-.transition-transform { transition: transform 0.3s ease-in-out; }
-.hover\:-translate-y-2:hover { transform: translateY(-0.5rem); }
-.p-6 { padding: 1.5rem; }
-.p-8 { padding: 2rem; }
+/* Reusable Button Styles */
+.btn {
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
 
-/* Grid Layout */
-.grid { display: grid; }
-.gap-8 { gap: 2rem; }
-.gap-12 { gap: 3rem; }
+.btn-primary {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: var(--background-dark);
+  box-shadow: 0 0 15px var(--primary-color);
+}
+.btn-primary:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 0 25px var(--primary-color);
+}
 
+.btn-secondary {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+.btn-secondary:hover {
+  background: var(--primary-color);
+  color: var(--background-dark);
+  transform: scale(1.05) translateY(-5px);
+}
 
-/* 3. Component-Specific Styles
-----------------------------------------------------------------*/
 /* Header */
-.fixed { position: fixed; }
-.top-0 { top: 0; }
-.left-0 { left: 0; }
-.right-0 { right: 0; }
-.z-50 { z-index: 50; }
-.transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 300ms; }
-.h-20 { height: 5rem; }
-.flex { display: flex; }
-.items-center { align-items: center; }
-.justify-between { justify-content: space-between; }
-.space-x-4 > * + * { margin-left: 1rem; }
-.text-gray-600 { color: var(--gray-600); }
-.rounded-md { border-radius: 0.375rem; }
-.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-.font-medium { font-weight: 500; }
-.bg-blue-600 { background-color: var(--blue-600); }
-.text-white { color: var(--white); }
-.px-4 { padding-left: 1rem; padding-right: 1rem; }
-.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-.hover\:bg-blue-700:hover { background-color: var(--blue-700); }
-.bg-white.shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
-.bg-transparent { background-color: transparent; }
+.header {
+  background: rgba(13, 12, 29, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem 5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-logo { font-size: 2rem; font-weight: 900; color: var(--primary-color); display: flex; align-items: center; gap: 10px; }
+.header-nav a { margin: 0 1rem; font-size: 1.1rem; color: var(--text-color); cursor: pointer; transition: color 0.3s ease; padding-bottom: 5px; border-bottom: 2px solid transparent; }
+.header-nav a:hover, .header-nav a.active { color: var(--primary-color); border-bottom: 2px solid var(--primary-color); }
 
-/* --- UPDATED STYLES FOR LINKS & BUTTONS --- */
-a {
-    text-decoration: none; /* Removes underline from all links by default */
-    -webkit-tap-highlight-color: transparent; /* Removes tap highlight on mobile */
-    color: inherit; /* Inherit color from parent by default */
+/* Keyframes for animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
-/* Specific style for the logo to ensure it's always blue */
-.logo-link, .logo-link:visited {
-    color: var(--blue-600);
+/* Section Wrapper */
+.section {
+  padding: 8rem 5%;
+  display: flex;
+  justify-content: center; /* Center the content wrapper horizontally */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+.section:last-of-type { border-bottom: none; }
 
-/* Base style for the navigation links */
-header nav a {
-  color: var(--gray-600);
-  padding: 0.5rem 0.25rem;
-  margin: 0 0.5rem;
-  font-weight: 500;
-  position: relative; /* Needed for the ::after pseudo-element */
-  transition: color 0.3s ease-in-out;
+.section-content-wrapper {
+  max-width: var(--max-width);
+  width: 100%;
+  text-align: center; /* Center text for section titles */
 }
-
-/* The pseudo-element for the animated underline */
-header nav a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0); /* Start with no width */
-    height: 2px;
-    bottom: -4px; /* Position it slightly below the text */
-    left: 0;
-    background-color: var(--blue-600);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
-}
-
-/* The hover state */
-header nav a:hover {
-  color: var(--gray-900); /* Make text darker on hover for better contrast */
-}
-
-header nav a:hover::after {
-    transform: scaleX(1); /* Animate to full width */
-    transform-origin: bottom left;
-}
-/* --- END UPDATED STYLES --- */
 
 /* Hero Section */
-.relative { position: relative; }
-.min-h-screen { min-height: 100vh; }
-.justify-center { justify-content: center; }
-.pt-20 { padding-top: 5rem; }
-.bg-blue-50 { background-color: var(--blue-50); }
-.absolute { position: absolute; }
-.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
-.bg-grid-blue-100 {
-  background-image: linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
-  background-size: 2rem 2rem;
+.hero-section {
+  min-height: 100vh; /* Make hero section full height */
+  display: flex;
+  align-items: center; /* Vertically center content */
 }
-.z-10 { z-index: 10; }
-.text-2xl { font-size: 1.5rem; line-height: 2rem; }
-.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-.font-extrabold { font-weight: 800; }
-.text-gray-900 { color: var(--gray-900); }
-.leading-tight { line-height: 1.25; }
-.block { display: block; }
-.mt-6 { margin-top: 1.5rem; }
-.max-w-2xl { max-width: 42rem; }
-.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-.mt-10 { margin-top: 2.5rem; }
-.gap-4 { gap: 1rem; }
-.font-semibold { font-weight: 600; }
-.px-8 { padding-left: 2rem; padding-right: 2rem; }
-.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
-.hover\:scale-105:hover { transform: scale(1.05); }
-.bg-white { background-color: var(--white); }
-.hover\:bg-gray-100:hover { background-color: #f3f4f6; }
-.text-blue-600 { color: var(--blue-600); }
+.hero-rocket {
+  font-size: 5rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  animation: float 4s ease-in-out infinite; /* Floating animation */
+}
+.hero-section h1 {
+  background: -webkit-linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-section p { font-size: 1.5rem; max-width: 700px; margin: 1.5rem auto 2.5rem auto; }
+.hero-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
 
+/* Section Title (moved text-align to wrapper) */
+.section-title h2 { font-size: 3rem; margin-bottom: 1rem; position: relative; display: inline-block; padding-bottom: 0.5rem; }
+.section-title h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); border-radius: 2px; }
+.section-title p { max-width: 700px; margin: 0 auto 4rem auto; }
 
-/* What We Do Section */
-.bg-blue-100 { background-color: var(--blue-100); }
-.rounded-full { border-radius: 9999px; }
-.mb-4 { margin-bottom: 1rem; }
-.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-
-/* Testimonials Section */
-.h-16 { height: 4rem; }
-.w-16 { width: 4rem; }
-.mr-4 { margin-right: 1rem; }
-.italic { font-style: italic; }
+/* Card Component */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.card { background-color: var(--background-light); padding: 2.5rem 2rem; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; }
+.card-icon { font-size: 4rem; color: var(--primary-color); margin-bottom: 1.5rem; }
+.card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #fff; }
 
 /* Pricing Section */
-.border-2 { border-width: 2px; }
-.border-blue-600 { border-color: var(--blue-600); }
-.scale-105 { transform: scale(1.05); }
-.border-transparent { border-color: transparent; }
-.-translate-y-1\/2 { transform: translateY(-50%); }
-.left-1\/2 { left: 50%; }
-.-translate-x-1\/2 { transform: translateX(-50%); }
-.text-5xl { font-size: 3rem; line-height: 1; }
-.space-y-4 > * + * { margin-top: 1rem; }
-.my-8 { margin-top: 2rem; margin-bottom: 2rem; }
-.text-green-500 { color: var(--green-500); }
-.mr-2 { margin-right: 0.5rem; }
-.w-6 { width: 1.5rem; }
-.h-6 { height: 1.5rem; }
-
-/* Portfolio Section */
-.group:hover .group-hover\:scale-105 { transform: scale(1.05); }
-.group:hover .group-hover\:opacity-100 { opacity: 1; }
-.opacity-0 { opacity: 0; }
-.transition-opacity { transition-property: opacity; }
-.bg-black { background-color: #000; }
-.bg-opacity-40 { background-color: rgba(0, 0, 0, 0.4); }
+.pricing-card-features { list-style: none; padding: 0; margin: 2rem 0; }
+.pricing-card-features li { margin-bottom: 1rem; color: var(--text-muted); }
+.pricing-card-features li svg { color: var(--secondary-color); margin-right: 10px; }
 
 /* Contact Section */
-.space-y-6 > * + * { margin-top: 1.5rem; }
-.w-full { width: 100%; }
-.py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-.border { border-width: 1px; }
-.border-gray-300 { border-color: #d1d5db; }
-.focus\:outline-none:focus { outline: 2px solid transparent; outline-offset: 2px; }
-.focus\:ring-2:focus { --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color); --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color); box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000); }
-.focus\:ring-blue-500:focus { --tw-ring-color: var(--blue-600); }
+.contact-form { display: flex; flex-direction: column; gap: 1.5rem; width: 100%; max-width: 600px; margin: 0 auto; }
+.contact-form input, .contact-form textarea { padding: 1rem; background-color: var(--background-light); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: var(--text-color); font-size: 1rem; }
 
 /* Footer */
-.bg-gray-800 { background-color: var(--gray-800); }
-.py-12 { padding-top: 3rem; padding-bottom: 3rem; }
-.text-base { font-size: 1rem; line-height: 1.5rem; }
-.text-gray-400 { color: var(--gray-400); }
+.footer { padding: 2rem 5%; text-align: center; background-color: var(--background-light); }
+.footer-socials { margin-bottom: 1rem; }
+.footer-socials a { color: var(--text-muted); font-size: 1.8rem; margin: 0 1rem; transition: color 0.3s ease; }
+.footer-socials a:hover { color: var(--primary-color); }
 
-
-/* 4. Responsive Styles
-----------------------------------------------------------------*/
-@media (min-width: 640px) {
-  .sm\:text-5xl { font-size: 3rem; line-height: 1; }
-  .sm\:flex-row { flex-direction: row; }
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  h1 { font-size: 3rem; }
+  .section-title h2 { font-size: 2.5rem; }
+  .hero-section p { font-size: 1.2rem; }
+  .section { padding: 6rem 5%; }
+  .header { flex-direction: column; padding: 0.5rem 5%; }
+  .header-nav { margin-top: 0.5rem; }
+  .header-nav a { margin: 0 0.5rem; font-size: 1rem; }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 2.5rem; }
+  .section-title h2 { font-size: 2rem; }
+  .hero-section p { font-size: 1rem; }
+  .header-nav { flex-wrap: wrap; justify-content: center; }
+  .card-grid { grid-template-columns: 1fr; }
+}/* New Section Header Layout */
+.section-header {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Left column is smaller than the right */
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  margin-bottom: 4rem;
+  text-align: left;
 }
 
-@media (min-width: 768px) {
-  .md\:py-24 { padding-top: 6rem; padding-bottom: 6rem; }
-  .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-  .md\:text-6xl { font-size: 4rem; line-height: 1; }
-  .md\:text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .md\:order-1 { order: 1; }
-  .md\:order-2 { order: 2; }
-  .md\:mt-0 { margin-top: 0; }
-  .md\:block { display: block; }
-  .md\:hidden { display: none; }
+.section-header-title h2 {
+  font-size: 3rem;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
 }
 
-@media (min-width: 1024px) {
-  .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.section-header-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0; /* Align underline to the left */
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
 }
 
-/* Hide mobile menu on larger screens */
-.md\:hidden {
-    display: none;
+.section-header-subtitle p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-muted); /* Uses the existing muted color */
+  border-left: 3px solid var(--primary-color);
+  padding-left: 1.5rem;
+}
+
+
+/* =================================== */
+/* == RESPONSIVE DESIGN ADJUSTMENTS == */
+/* =================================== */
+
+/* Add this inside the Tablet media query */
+@media (max-width: 768px) {
+  /* ... existing tablet styles ... */
+
+  .section-header {
+    grid-template-columns: 1fr; /* Stack columns on tablets */
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .section-header-title h2::after {
+    left: 50%; /* Re-center the underline */
+    transform: translateX(-50%);
+  }
+
+  .section-header-subtitle p {
+    border-left: none;
+    padding-left: 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+/* ... keep all existing CSS ... */
+
+/* Add these new styles before the media queries */
+.see-more-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.care-plan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.care-plan-item {
+    background-color: var(--background-light);
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+}
+
+.care-plan-item svg {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    flex-shrink: 0; /* Prevents icon from shrinking */
+}
+
+/* ... keep existing media queries ... */
+
+/* ... in src/index.css ... */
+
+/* New Pricing Card Detail Styles */
+.price-details {
+  margin: 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 0;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.price-item:last-child {
+  margin-bottom: 0;
+}
+
+.price-label {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.price-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.logo-btn {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.logo-btn:hover {
+  color: var(--secondary-color);
 }

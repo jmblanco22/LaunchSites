@@ -1,30 +1,51 @@
 import React from 'react';
 import Section from '../layout/Section';
-import SectionTitle from '../layout/SectionTitle';
 import Card from '../layout/Card';
+import { FaBolt, FaPalette, FaShieldAlt } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+
+const features = [
+  { icon: <FaBolt />, title: 'Warp Speed', description: 'Our websites are optimized for speed, providing an instant user experience.' },
+  { icon: <FaPalette />, title: 'Stunning Design', description: 'We create visually captivating designs that are out of this world.' },
+  { icon: <FaShieldAlt />, title: 'Ironclad Security', description: 'Your digital assets are protected with the latest security protocols.' },
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
 
 const WhyChooseUs = () => {
-    const benefits = [
-        { title: "Affordable Pricing", description: "Get a professional website without breaking the bank. Transparent, fair pricing for small businesses.", icon: "💰" },
-        { title: "Fast Turnaround", description: "We work efficiently to get your website live quickly, so you can start seeing results sooner.", icon: "🚀" },
-        { title: "Responsive Design", description: "Your site will look and work perfectly on all devices—desktops, tablets, and smartphones.", icon: "📱" },
-        { title: "Local Support", description: "Friendly, dedicated support from our team. We're here to help you succeed online.", icon: "🤝" },
-    ];
+  return (
+    <Section id="features">
+      {/* Updated Header Layout */}
+      <div className="section-header">
+        <div className="section-header-title">
+          <h2>Why Choose Us?</h2>
+        </div>
+        <div className="section-header-subtitle">
+          <p>Our crew is dedicated to navigating the complexities of web development so you can focus on your destination. We provide the thrust you need to achieve escape velocity.</p>
+        </div>
+      </div>
 
-    return (
-        <Section id="why-us" className="bg-blue-50">
-            <SectionTitle>Why Choose LaunchSites?</SectionTitle>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {benefits.map((benefit, index) => (
-                    <Card key={index} className="text-center">
-                        <div className="text-4xl mb-4">{benefit.icon}</div>
-                        <h3 className="text-xl font-bold text-gray-800 mb-2">{benefit.title}</h3>
-                        <p className="text-gray-600">{benefit.description}</p>
-                    </Card>
-                ))}
-            </div>
-        </Section>
-    );
+      <motion.div
+        className="card-grid"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {features.map((feature, index) => (
+          <Card key={index} icon={feature.icon} title={feature.title} description={feature.description} />
+        ))}
+      </motion.div>
+    </Section>
+  );
 };
 
 export default WhyChooseUs;
