@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // Corrected line
+import React from 'react'; 
 import Section from '../layout/Section';
 import Card from '../layout/Card';
 import { FaCheckCircle } from 'react-icons/fa';

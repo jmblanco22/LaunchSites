@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // Corrected line
+import React from 'react'; 
 import { motion } from 'framer-motion';
 import Section from '../layout/Section';
 import Card from '../layout/Card';
