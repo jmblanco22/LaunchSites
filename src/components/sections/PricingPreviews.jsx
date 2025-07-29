@@ -5,9 +5,9 @@ import Card from '../layout/Card';
 import { NavLink } from 'react-router-dom';
 
 const plans = [
-  { name: 'Starter Package', fee: '$500', monthly: '$40 / month' },
-  { name: 'Business Growth', fee: '$700', monthly: '$70 / month' },
-  { name: 'Pro Scale', fee: '$900', monthly: '$100 / month' },
+  { name: 'Starter Package', fee: '$500', monthly: '$70 / month' },
+  { name: 'Business Growth', fee: '$700', monthly: '$100 / month' },
+  { name: 'Pro Scale', fee: '$900', monthly: '$200 / month' },
 ];
 
 const containerVariants = {

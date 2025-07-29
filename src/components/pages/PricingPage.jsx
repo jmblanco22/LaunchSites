@@ -9,7 +9,7 @@ const fullPlans = [
   {
     name: 'Starter Package',
     fee: '$500',
-    monthly: '$40 / month',
+    monthly: '$70 / month',
     features: [
       'Up to 5 Pages',
       'Mobile Responsive Design',
@@ -21,25 +21,28 @@ const fullPlans = [
   {
     name: 'Business Growth',
     fee: '$700',
-    monthly: '$70 / month',
+    monthly: '$100 / month',
     features: [
       'Up to 10 Pages',
       'Mobile Responsive Design',
       'Enhanced On-Page SEO (Includes keyword research)',
       'E-Commerce Ready (Setup for up to 10 products)',
+      'External API and Backend Integration',
       'Everything in Starter Maintenance + Performance Monitoring'
     ]
   },
   {
     name: 'Pro Scale',
     fee: '$900',
-    monthly: '$100 / month',
+    monthly: '$200 / month',
     features: [
       'Up to 15 Pages',
       'Mobile Responsive Design',
-      'Enhanced On-Page SEO',
+      'Enhanced On-Page SEO (Includes keyword research)',
       'E-Commerce Ready',
       'Blog & Portfolio Integration',
+      'External API and Backend Integration',
+      'Customizable Features and Process',
       'Everything in Business Maintenance + Priority Support'
     ]
   }

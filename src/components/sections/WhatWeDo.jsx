@@ -5,10 +5,10 @@ import Card from '../layout/Card';
 import { FaCode, FaShoppingCart, FaBullhorn, FaRocket } from 'react-icons/fa';
 
 const services = [
-  { icon: <FaCode />, title: 'Web Development', description: 'Crafting pixel-perfect, responsive websites from scratch.' },
+  { icon: <FaCode />, title: 'Web Development', description: 'Crafting pixel-perfect, responsive websites from scratch. Ensuring your website is blazing fast for an optimal user experience.' },
   { icon: <FaShoppingCart />, title: 'E-Commerce Solutions', description: 'Building powerful online stores that convert visitors into customers.' },
-  { icon: <FaBullhorn />, title: 'SEO & Marketing', description: 'Optimizing your site to rank higher and reach a wider audience.' },
-  { icon: <FaRocket />, title: 'Performance Tuning', description: 'Ensuring your website is blazing fast for an optimal user experience.' },
+  { icon: <FaBullhorn />, title: 'SEO & Marketing', description: 'Optimizing your site to rank higher and reach a wider audience.' }
+ // { icon: <FaRocket />, title: 'Performance Tuning', description: 'Ensuring your website is blazing fast for an optimal user experience.' },
 ];
 
 const containerVariants = {

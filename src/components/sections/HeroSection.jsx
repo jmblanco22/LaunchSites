@@ -34,7 +34,7 @@ const HeroSection = () => {
         transition={{ duration: 0.8, delay: 0.6 }}
       >
         <a href="#contact" className="btn btn-primary">Get Started</a>
-        <a href="#contact" className="btn btn-secondary">Book a Demo</a>
+        {/* The "Book a Demo" button has been removed */}
       </motion.div>
     </Section>
   );

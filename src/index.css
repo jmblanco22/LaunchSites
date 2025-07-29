@@ -313,3 +313,59 @@ p { color: var(--text-muted); line-height: 1.8; font-size: 1.1rem; }
 .logo-btn:hover {
   color: var(--secondary-color);
 }
+/* ... keep all your existing CSS ... */
+
+/* Portfolio Card Styles */
+.portfolio-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Makes cards in the same row equal height */
+}
+
+.portfolio-card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.tech-tag {
+  background-color: rgba(10, 239, 255, 0.1); /* Use primary color with low opacity */
+  color: var(--primary-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* This makes sure the card content fills the space and pushes the button to the bottom */
+.portfolio-card-content p {
+  flex-grow: 1; 
+}
+
+/* Update .btn style to support icons */
+.btn {
+  /* ... keep existing btn styles ... */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* Adds space between text and icon */
+  justify-content: center;
+}
+
+/* ... in src/index.css, you can add this near the bottom ... */
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+.submit-button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
