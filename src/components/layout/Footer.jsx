@@ -5,9 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-socials">
-        <a href="#" aria-label="Github"><FaGithub /></a>
-        <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
-        <a href="#" aria-label="Twitter"><FaTwitter /></a>
+        
       </div>
       <p>&copy; {new Date().getFullYear()} Launchsites. All rights reserved. Your mission, our code.</p>
     </footer>
@@ -15,3 +13,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
+//<a href="#" aria-label="Github"><FaGithub /></a>
+// <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
+// <a href="#" aria-label="Twitter"><FaTwitter /></a>
