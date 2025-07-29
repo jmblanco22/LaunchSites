@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react'; // Corrected line
 import HeroSection from '../components/sections/HeroSection';
 import WhatWeDo from '../components/sections/WhatWeDo';
 import WhyChooseUs from '../components/sections/WhyChooseUs';

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react'; // Corrected line
 import Section from '../layout/Section';
 import SectionTitle from '../layout/SectionTitle';
 // Placeholder for testimonials
