@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Section from '../layout/Section';
 import { motion } from 'framer-motion';
 import { FaPaperPlane, FaSpinner, FaCheckCircle } from 'react-icons/fa';
